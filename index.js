@@ -36,27 +36,33 @@ bot.on('messageCreate', async message => {
   if(message.author.bot) {
     return null;
   }
-    if(message.content === `${prefix}help`) { // use ' 
+    if(message.content === `${prefix}help`) {
   const helpEmbed = new MessageEmbed()
     .setTitle("Help System")
     .setDescription("Coming Soon")
     .setColor("RANDOM")
     .setFooter({ text: `RPG on the Table | Version ${ver}`})
       message.channel.send({content: `<@${message.author.id}>, here`, embeds: [helpEmbed]})
-    } // fight cmd time!1!1!1!1!
+    }
     if(message.content.startsWith(`${prefix}fight`)) {
       const mentionxd = message.mentions.users.first()
-      if(mentionxd === null || !mentionxd) {
+      if(!mentionxd) {
         const noMentionEmbed = new MessageEmbed()
         .setTitle('Error')
         .setDescription ('You have to mention someone to fight them!')
         .setFooter({ text: 'RPG on the Table | Version ' + ver})
         .setColor('#FFFF00')
-        // setup git? k | DatEmage acc or create a new one | DatEmage acc i guess | k
+    message.channel.send({embeds: [noMentionEmbed]})
   
-      } else { // here
-        message.channel.send('')
+      } else { 
+        message.channel.send(
+          ` 
+<@${mentionxd.id}>, mention test xd
+so now u can add new lines without slash n
+          `
+          )
       }
+      
     }
 })
 bot.login(process.env.TOKEN) 
