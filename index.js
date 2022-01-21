@@ -13,8 +13,8 @@ app.listen(3000, () => {
   console.log('🤖 | Uptimer is running');
 });
 
-// const {Database} = require("@replit/database") 
-// const db = new Database()
+const {Database} = require("@replit/database") 
+const db = new Database()
 const {Client, MessageEmbed} = require("discord.js")
 const bot = new Client({intents: [
       'GUILDS',
@@ -55,14 +55,13 @@ bot.on('messageCreate', async message => {
     message.channel.send({embeds: [noMentionEmbed]})
   
       } else { 
-        message.channel.send(
-          ` 
-<@${mentionxd.id}>, mention test xd
-so now u can add new lines without slash n
-          `
-          )
+    db.get(`user_${message.author.id}`)
+        const fightEmbed = new MessageEmbed()
+        .setTitle("Fight against magic show user player is fighting against")
+        .setDescription(`**Username:** user_${message.author.id}\n`)
+        .setColor("BLUE")
+        .setFooter({ text: 'RPG on The Table | Version ' + ver})
       }
-      
     }
 })
 bot.login(process.env.TOKEN) 
