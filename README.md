@@ -1,6 +1,2 @@
-# RPG on The Table
-RPG on The Table is an RPG bot made using repl.it database
-# Bot Invite
-Invite of bot is currenly unavailable
-# Support Server
-Support server of bot is currently unavailable
+## No Longer Maintained
+This Repository is no longer maintained. It exists purely for educational purposes, and any other use cases are strongly discouraged
